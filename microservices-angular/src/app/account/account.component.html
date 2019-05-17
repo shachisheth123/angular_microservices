@@ -1,0 +1,48 @@
+<div class="container">
+  <form (ngSubmit)="addNewAccount(accountForm.value)" #accountForm="ngForm">
+    {{accounts.accountHolderName}}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Account Holder Name</label>
+      <input type="text" class="form-control" [(ngModel)]="accounts.accountHolderName" name="accountHolderName">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Balance</label>
+      <input type="number" class="form-control" [(ngModel)]="accounts.accountBalance" name="accountBalance">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Account Type</label>
+      <select class="form-control" [(ngModel)]="accounts.accountType" name="accountType">
+        <option>---select--</option>
+        <option>saving</option>
+        <option>current</option>
+
+      </select>
+    </div>
+    <br><br>
+    <button type="submit" class="btn btn-block  btn-primary">Add New Account</button><br>
+
+  </form>
+  <button type="submit" class="btn btn-primary" routerLink="home">Account</button>&nbsp;
+  <button type="submit" class="btn btn-primary">Transaction</button><br><br>
+</div>
+
+<!-- <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Account Holder Name</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Account type</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let acc of accounts">
+      <td>{{acc.accountHolderName}}</td>
+      <td>{{acc.accountNumber}}</td>
+      <td>{{acc.accountBalance}}</td>
+      <td>{{acc.accountType}}</td>
+
+    </tr>
+  </tbody>
+</table> -->
